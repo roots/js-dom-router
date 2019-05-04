@@ -1,6 +1,6 @@
 {
   "name": "js-dom-router",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "author": "Roots <team@roots.io>",
   "license": "MIT",
   "description": "Simple DOM-based JavaScript Router",
