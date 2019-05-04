@@ -6,7 +6,8 @@
   "description": "Simple DOM-based JavaScript Router",
   "main": "Router.js",
   "scripts": {
-    "test": "mocha -r esm test/*.test.js"
+    "test": "mocha -r esm test/*.test.js",
+    "make-camel-case": "lodash modularize exports=es include=camelCase -o vendor"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "esm": "^3.2.22",
+    "lodash-cli": "^4.17.5",
     "mocha": "^6.1.4"
   }
 }

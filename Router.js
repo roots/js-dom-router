@@ -1,4 +1,4 @@
-import camelCase from './utils/camelCase';
+import camelCase from './vendor/camelCase';
 
 /**
  * DOM-based Routing
