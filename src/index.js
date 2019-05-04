@@ -1,4 +1,4 @@
-import camelCase from './utils/camelCase';
+import { camelCase } from './utils';
 
 /**
  * DOM-based Routing
@@ -8,7 +8,7 @@ import camelCase from './utils/camelCase';
  * The routing fires all common scripts, followed by the page specific scripts.
  * Add additional events for more control over timing e.g. a finalize event
  */
-class Router {
+export default class {
 
   /**
    * Create a new Router
@@ -61,5 +61,3 @@ class Router {
     this.fire('common', 'finalize');
   }
 }
-
-export default Router
