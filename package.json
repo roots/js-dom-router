@@ -4,23 +4,15 @@
   "author": "Roots <team@roots.io>",
   "license": "MIT",
   "description": "Simple DOM-based JavaScript Router",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/roots/js-dom-router.git"
   },
   "scripts": {
-    "build": "run-s clean babel",
-    "babel": "babel src -d dist",
-    "clean": "rimraf dist",
     "release": "np"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "np": "^5.0.1",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^2.6.3"
+    "np": "^5.0.1"
   }
 }
