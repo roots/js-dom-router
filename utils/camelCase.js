@@ -1,6 +1,6 @@
 /**
  * A simple camelCase converter.
- * 
+ *
  * @param {string} str String that isn't camel-case, e.g., CAMeL_CaSEiS-harD
  * @return {string} String converted to camel-case, e.g., camelCaseIsHard
  */
