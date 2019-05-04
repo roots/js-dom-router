@@ -5,8 +5,15 @@
   "license": "MIT",
   "description": "Simple DOM-based JavaScript Router",
   "main": "Router.js",
+  "scripts": {
+    "test": "mocha -r esm test/*.test.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/roots/js-dom-router.git"
+  },
+  "devDependencies": {
+    "esm": "^3.2.22",
+    "mocha": "^6.1.4"
   }
 }
