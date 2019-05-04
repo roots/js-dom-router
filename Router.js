@@ -1,4 +1,4 @@
-import camelCase from './utils/camelCase';
+import camelCase from 'lodash.camelcase';
 
 /**
  * DOM-based Routing

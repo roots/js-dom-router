@@ -15,5 +15,8 @@
   "devDependencies": {
     "esm": "^3.2.22",
     "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "lodash.camelcase": "^4.3.0"
   }
 }

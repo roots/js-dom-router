@@ -1,5 +1,5 @@
 import assert from 'assert';
-import camelCase from '../utils/camelCase.js';
+import camelCase from 'lodash.camelcase';
 
 describe('camelCase', function() {
   it('should generally work', function() {
