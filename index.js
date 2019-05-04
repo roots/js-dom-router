@@ -8,7 +8,7 @@ import { camelCase } from './utils';
  * The routing fires all common scripts, followed by the page specific scripts.
  * Add additional events for more control over timing e.g. a finalize event
  */
-export default class {
+export class Router {
 
   /**
    * Create a new Router
