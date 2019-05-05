@@ -1,12 +1,40 @@
 {
   "name": "js-dom-router",
+  "description": "DOM router based on work by Paul Irish",
   "version": "1.0.0",
-  "author": "Roots <team@roots.io>",
+  "author": "QWp6t",
+  "bugs": "https://github.com/roots/js-dom-router/issues",
+  "devDependencies": {
+    "@babel/parser": "^7.4.4",
+    "@babel/types": "^7.4.4",
+    "@types/jest": "^24.0.12",
+    "@types/node": "^12.0.0",
+    "jest": "^24.7",
+    "jest-environment-jsdom-fourteen": "^0.1.0",
+    "rimraf": "^2.6",
+    "ts-jest": "^24.0",
+    "tslint": "^5.16",
+    "tslint-config-prettier": "^1.18",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/lib",
+    "/npm-shrinkwrap.json"
+  ],
+  "homepage": "https://github.com/roots/js-dom-router",
+  "keywords": [
+    "dom"
+  ],
   "license": "MIT",
-  "description": "Simple DOM-based JavaScript Router",
-  "main": "Router.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/roots/js-dom-router.git"
-  }
+  "main": "lib/index.js",
+  "repository": "roots/js-dom-router",
+  "scripts": {
+    "posttest": "tslint -p . -t stylish",
+    "prepack": "rimraf lib && npx tsc -b",
+    "test": "jest"
+  },
+  "types": "lib/index.d.ts"
 }

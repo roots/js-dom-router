@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["dom", "es2018"],
+    "watch": true,
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "outDir": "lib",
+    "rootDir": "src",
+    "typeRoots": ["node_modules/@types"],
+    "removeComments": true,
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
