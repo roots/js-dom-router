@@ -33,7 +33,7 @@
   "repository": "roots/js-dom-router",
   "scripts": {
     "posttest": "tslint -p . -t stylish",
-    "prepack": "rimraf lib && npx tsc -b",
+    "prepack": "rimraf lib && tsc -b",
     "test": "jest"
   },
   "types": "lib/index.d.ts"
