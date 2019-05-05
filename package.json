@@ -2,7 +2,7 @@
   "name": "js-dom-router",
   "description": "DOM router based on work by Paul Irish",
   "version": "1.0.0",
-  "author": "QWp6t",
+  "author": "Roots <team@roots.io>",
   "bugs": "https://github.com/roots/js-dom-router/issues",
   "devDependencies": {
     "@babel/parser": "^7.4.4",
