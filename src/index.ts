@@ -40,7 +40,7 @@ export default class Router {
         .filter(mutation => mutation.oldValue)
         .forEach(mutation => {
           const old = (mutation.oldValue as string).split(/\s+/);
-          (mutation.target as HTMLElement).className.split(/\s+/)
+          Array.from((mutation.target as HTMLElement).classList)
             .filter(className => old.indexOf(className) === -1)
             .forEach(this.fire.bind(this));
         });
