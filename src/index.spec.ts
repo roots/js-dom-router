@@ -15,9 +15,9 @@ describe('DOM router', () => {
     el.addEventListener('router.kjo', callback);
     el.addEventListener('router.apray', callback);
 
-    new Router(el); // tslint:disable-line
+    new Router(el).fire();
 
-    expect(callback).toMatchSnapshot();
+    expect(callback).toHaveBeenCalledTimes(2);
   });
 
   test('it should use body classes when document is passed', () => {
@@ -27,9 +27,9 @@ describe('DOM router', () => {
     document.addEventListener('router.kjo', callback);
     document.addEventListener('router.apray', callback);
 
-    new Router(document); // tslint:disable-line
+    new Router(document).fire();
 
-    expect(callback).toMatchSnapshot();
+    expect(callback).toHaveBeenCalledTimes(2);
   });
 
   test('it should watch target for new classes', (done) => {
@@ -48,8 +48,20 @@ describe('DOM router', () => {
     setTimeout(() => el.className += ' budbs', 200);
     setTimeout(() => el.className = 'kjo swalk apray bdubs', 300);
     setTimeout(() => {
-      expect(callback).toMatchSnapshot()
+      expect(callback).toHaveBeenCalledTimes(3)
       done();
     }, 400);
+  });
+
+  test('the on helper should attach an event', () => {
+    const el = makeElement('kjo apray');
+    const callback = jest.fn(() => el.className);
+
+    el.addEventListener('router.kjo', callback);
+    el.addEventListener('router.apray', callback);
+
+    new Router(el).fire();
+
+    expect(callback).toHaveBeenCalledTimes(2);
   });
 });
