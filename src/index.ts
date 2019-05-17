@@ -44,9 +44,9 @@ export default class Router {
    * @param {EventListenerOrEventListenerObject} listener The object which receives a notification
    * @param {Options} options An options object that specifies characteristics about the event listener.
    */
-  public on(typeOrTypes:string|IListOfListeners, listener:EventListener, options?: Options) : this {
+  public on(typeOrTypes:string|IListOfListeners, listener?:EventListener, options?: Options) : this {
     if (typeof typeOrTypes === 'string') {
-      this.bind.addEventListener(`${Router.namespace}.${typeOrTypes}`, listener, options);
+      this.bind.addEventListener(`${Router.namespace}.${typeOrTypes}`, listener as EventListener, options);
       return this;
     }
     if (typeOrTypes instanceof Array) {
@@ -116,8 +116,9 @@ export default class Router {
     return this;
   }
 
-  public fire() {
+  public fire() : this {
     Array.from(this.target.classList).forEach(this.dispatch.bind(this));
+    return this;
   }
 
   protected ready() {

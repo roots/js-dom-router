@@ -32,13 +32,11 @@ describe('DOM router', () => {
     expect(callback).toHaveBeenCalledTimes(2);
   });
 
-  test('it should watch target for new classes', (done) => {
+  test('it should watch target for new classes', async () => {
     const el = makeElement('kjo');
     const callback = jest.fn(() => el.className);
 
-    const router = new Router(el);
-
-    router.watch();
+    new Router(el).fire().watch();
 
     el.addEventListener('router.kjo', callback);
     el.addEventListener('router.apray', callback);
@@ -48,8 +46,7 @@ describe('DOM router', () => {
     setTimeout(() => el.className += ' budbs', 200);
     setTimeout(() => el.className = 'kjo swalk apray bdubs', 300);
     setTimeout(() => {
-      expect(callback).toHaveBeenCalledTimes(3)
-      done();
+      expect(callback).toHaveBeenCalledTimes(3);
     }, 400);
   });
 
@@ -60,7 +57,10 @@ describe('DOM router', () => {
     el.addEventListener('router.kjo', callback);
     el.addEventListener('router.apray', callback);
 
-    new Router(el).fire();
+    new Router(el)
+      .fire()
+      .on('kjo', callback)
+      .on({ apray: callback });
 
     expect(callback).toHaveBeenCalledTimes(2);
   });
