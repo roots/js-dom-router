@@ -36,8 +36,6 @@ export default class Router {
   constructor(bind: HTMLElement | Document, target?:HTMLElement) {
     this.bind = bind;
     this.target = target || (bind instanceof Document ? bind.body : bind);
-
-    this.ready();
   }
 
   /**
