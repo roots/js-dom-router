@@ -73,5 +73,21 @@ describe('DOM router', () => {
       .fire();
 
     expect(callback).toHaveBeenCalledTimes(2);
-  })
+  });
+
+  test('`ready` should fire when ready', async () => {
+    const { router } = require('./');
+    const callback = jest.fn(() => document.body.className);
+    document.body.className = 'kjo apray';
+
+    router
+      .on('kjo', callback)
+      .on('apray', callback)
+      .ready()
+      .ready();
+
+    setTimeout(() => {
+      expect(callback).toHaveBeenCalledTimes(2);
+    }, 200);
+  });
 });

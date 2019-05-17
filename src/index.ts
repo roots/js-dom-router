@@ -121,19 +121,22 @@ export default class Router {
     return this;
   }
 
-  protected ready() {
+  public ready() : this {
     if (document.readyState !== 'loading') {
       window.setTimeout(this.fire.bind(this), 0);
-      return;
+      return this;
     }
     document.addEventListener('DOMContentLoaded', this.fire.bind(this));
+
+    return this;
   }
 
   /**
    * Dispatch Router events
    */
-  protected dispatch(className: string) {
+  public dispatch(className: string) : this {
     this.bind.dispatchEvent(new Event(`${Router.namespace}.${className}`));
+    return this;
   }
 }
 
