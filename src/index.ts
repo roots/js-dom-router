@@ -136,3 +136,5 @@ export default class Router {
     this.bind.dispatchEvent(new Event(`${Router.namespace}.${className}`));
   }
 }
+
+export const router = new Router(document);

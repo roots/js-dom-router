@@ -54,14 +54,24 @@ describe('DOM router', () => {
     const el = makeElement('kjo apray');
     const callback = jest.fn(() => el.className);
 
-    el.addEventListener('router.kjo', callback);
-    el.addEventListener('router.apray', callback);
-
     new Router(el)
-      .fire()
       .on('kjo', callback)
-      .on({ apray: callback });
+      .on({ apray: callback })
+      .fire();
 
     expect(callback).toHaveBeenCalledTimes(2);
   });
+
+  test('named export `router` should automatically bind to the document', () => {
+    const { router } = require('./');
+    const callback = jest.fn(() => document.body.className);
+    document.body.className = 'kjo apray';
+
+    router
+      .on('kjo', callback)
+      .on('apray', callback)
+      .fire();
+
+    expect(callback).toHaveBeenCalledTimes(2);
+  })
 });
