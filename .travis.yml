@@ -1,8 +1,18 @@
 language: node_js
 node_js:
-  - node
-
+- node
 cache: yarn
-
 script:
-  - yarn test
+- yarn test
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: hi@qwp6t.me
+  api_key:
+    secure: Cr/OFxgyCAJKl63KFkWSFNevWYzNAwKA0mD8BeH6J4aASbB0QubqjltDFXbr7rKBTC5JTs+ZNaVN8XU3njBRRta91cEqtLC6m962ODtPWm1Dpe2FazZOzxeXzpXrNyIl/kUjH/EknqiNLTjkPcA7SqBh48OoE9JJ+fK9InJOeMJP0cr/QMO4zU09NM6HnjGbepNI1X+bt0QuFraTTiIC9wSJ139+1+nyBRqxbDJMNDhaRJy7gz5aWs/pKRapbr11Usauznp3/Z4xP8jj9RkhNVeKfGNLkXaDBZCRD7NPcZEgWwIVsE49F6/gZhtcbJOc4DIBw/JzfquVtxmUx8Xbo7HISOZOzlSmHXkGUEY6+LXZlUOr5CGEqqJS129e0oxeXLoXHPVqSgZ4LMTeRA13lmXHc3UeGUuOitLPbqeVt+o8pfvK51TP3SijsaWUpzlhsRWC8zEAiON1AaVmA3N1e2RjiBSzZvF6blmGdalLdoqn31Y3fkpQZWxQwzxH2xrluJMoIyydDm/6RUZXsl3m+6+jYjRXkRZmTnRThvd7Cl5pjyvO4idObOYsi/ciekh81PcsFRzhtEsN1qpkXsbHjF0c8RKtx/0XC3I1cfRHu/eNqNrbozid7JNu/Yu/eZ25/0eErHCAwwMLalqahc0CKCmR3eqB8pr/iGqH1mvCgm4=
+  on:
+    tags: true
+    repo: roots/js-dom-router
+notifications:
+  email:
+    on_success: always
