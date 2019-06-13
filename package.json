@@ -5,17 +5,17 @@
   "author": "Roots <team@roots.io>",
   "bugs": "https://github.com/roots/js-dom-router/issues",
   "devDependencies": {
-    "@babel/parser": "^7.4.4",
-    "@babel/types": "^7.4.4",
-    "@types/jest": "^24.0.12",
-    "@types/node": "^12.0.0",
-    "jest": "^24.7",
+    "@babel/parser": "^7.4",
+    "@babel/types": "^7.4",
+    "@types/jest": "^24.0",
+    "@types/node": "^12.0",
+    "jest": "^24.8",
     "jest-environment-jsdom-fourteen": "^0.1.0",
     "rimraf": "^2.6",
     "ts-jest": "^24.0",
-    "tslint": "^5.16",
+    "tslint": "^5.17",
     "tslint-config-prettier": "^1.18",
-    "typescript": "^3.3"
+    "typescript": "^3.5"
   },
   "engines": {
     "node": ">=8.0.0"
